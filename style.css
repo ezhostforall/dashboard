@@ -1,0 +1,254 @@
+:root {
+    --primary-color: #1992D4;
+    --background-color: #F4F4F4;
+    --card-border: #FFA500; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+html, body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon {
+    width: 30px;
+}
+
+.avatar {
+    width: 30px;
+    border-radius: 30px;
+}
+
+.avatar-large {
+    width: 60px;
+    border-radius: 60px;
+}
+
+main.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar header-nav"
+        "sidebar content"; 
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--primary-color);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    gap: 20px; 
+    align-items: start; 
+    width: 250px; 
+    height: auto;
+}
+
+.sidebar-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.sidebar-menu {
+    display: grid;
+    gap: 8px; 
+    align-self: start; 
+
+}
+
+.sidebar-secondary-menu {
+    display: grid;
+    gap: 8px;
+}
+
+.icon-text-wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    filter: invert(1);
+}
+
+.icon-text-wrap:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 20px 0px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    width: 90%;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-nav {
+    grid-area: header-nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-nav-wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-button-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button-wrap button {
+    width: 10vw;
+    padding: 12px 16px; 
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 30px; 
+    cursor: pointer;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px; 
+    padding: 20px;
+    align-items: start;
+}
+
+.cards {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 1 / 2;
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border-left: 10px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.card-icon {
+    width: 30px;
+}
+
+.right-column {
+    display: grid;
+    grid-template-rows: auto auto; 
+    gap: 10px; 
+    grid-column: 2 / 3;
+}
+
+.announcement {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+}
+
+.announcement-card {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.trending {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    grid-row: 2; 
+}
+
+.trending-item {
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 6px;
+    margin-top: 10px;
+}
